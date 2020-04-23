@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.google.gms.google-services'
 
 android {
   compileSdkVersion 29
@@ -13,7 +14,7 @@ android {
     targetSdkVersion 29
     versionCode 1
     versionName "1.0"
-
+    vectorDrawables.useSupportLibrary = true
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
 
@@ -45,4 +46,10 @@ dependencies {
   kapt "com.google.dagger:dagger-compiler:$dagger"
   implementation "com.google.dagger:dagger-android-support:$dagger"
   kapt "com.google.dagger:dagger-android-processor:$dagger"
+
+  //AirBNB Lottie
+  implementation "com.airbnb.android:lottie:$lottieVersion"
+
+  //Firebase
+  implementation 'com.google.firebase:firebase-analytics:17.3.0'
 }
